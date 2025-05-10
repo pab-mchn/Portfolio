@@ -37,11 +37,20 @@ span{
   padding: 3px;
 }
 
+header h1 span {
+  font-size: 3rem;
+}
+header h2 span {
+  font-size: 2rem;
+}
+
  h2, h3, blockquote {
   font-family: elevon, sans-serif;
   font-weight: 700;
   font-style: normal;
 }
+
+
 
 canvas {
   position: fixed;
@@ -53,7 +62,10 @@ canvas {
 
   header {
     grid-column: 2 / 7;
-    height: 100vh
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   section {
@@ -75,7 +87,9 @@ canvas {
   blockquote p {
     color: black;
     background-color: white;
-    font-size: 4rem;
+    font-size: 3rem;
     display: inline;
     line-height: 1;
   }
+
+
