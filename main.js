@@ -84,6 +84,7 @@ loader.load('avatar_hiking.glb', (gltf) => {
 // Scroll Animation (sin afectar a pab)
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
+
   moon.rotation.x += 0.05;
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
@@ -98,6 +99,7 @@ moveCamera();
 // Click → Pab mira a la cámara
 window.addEventListener('click', () => {
   if (!pab) return;
+
   const direction = new THREE.Vector3();
   direction.subVectors(camera.position, pab.position).normalize();
   const angle = Math.atan2(direction.x, direction.z);
@@ -144,68 +146,35 @@ window.addEventListener('mouseup', () => {
 });
 
 // GitHub Cube (menu button)
-// GitHub Cube (menu button)
-const githubTexture = new THREE.TextureLoader().load('github.png');
+let targetCubePosition = new THREE.Vector3();
 
-// Crear 6 caras con la misma textura
-const materials = Array(6).fill().map(() =>
+const githubTexture = new THREE.TextureLoader().load('github.png');
+const cube = new THREE.Mesh(
+  new THREE.BoxGeometry(1, 1, 1),
   new THREE.MeshBasicMaterial({ map: githubTexture })
 );
+scene.add(cube);
 
-// Crear el cubo
-const cube = new THREE.Mesh(
-  new THREE.BoxGeometry(2, 2, 2),
-  materials
-);
+// Mantener el cubo en esquina inferior derecha
+function updateCubeScreenPosition() {
+  const vector = new THREE.Vector3(0.78, -0.78, 0.1); // NDC
+  vector.unproject(camera);
 
-// Añadir a la cámara para que se mueva con ella
-camera.add(cube);
-scene.add(camera);
-
-// Función para actualizar posición relativa en pantalla
-function positionCubeInCorner() {
-  const aspect = window.innerWidth / window.innerHeight;
-
-  // Coloca el cubo en una esquina de la cámara
-  const x = aspect * 17; // mayor en pantallas anchas
-  const y = -18;
-
-  cube.position.set(x, y, -30); // z más negativo lo aleja un poco
+  const dir = vector.sub(camera.position).normalize();
+  const distance = 20;
+  const pos = camera.position.clone().add(dir.multiplyScalar(distance));
+  targetCubePosition.copy(pos);
 }
-positionCubeInCorner();
 
-// Detectar click en el cubo
+// Click en cubo abre GitHub
 window.addEventListener('click', (event) => {
-  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
   raycaster.setFromCamera(mouse, camera);
   const intersects = raycaster.intersectObject(cube);
 
   if (intersects.length > 0) {
-    window.open('https://github.com/pab-mchn', '_blank');
+    window.open('https://github.com/pab-mchn', '_blank'); // ← Cambia "tu_usuario"
   }
-});
-
-// Resize handler (actualiza proyección y posición del cubo)
-window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  positionCubeInCorner();
-});
-
-
-
-// Resize handler
-window.addEventListener('resize', () => {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-
-  cube.position.set(window.innerWidth / 2 - 80, -window.innerHeight / 2 + 80, 0);
 });
 
 // Animation Loop
@@ -220,16 +189,11 @@ function animate() {
 
   cube.rotation.y += 0.01;
   cube.rotation.x += 0.005;
+  cube.position.lerp(targetCubePosition, 0.1);
 
-  renderer.autoClear = false;
-  renderer.clear();
+  updateCubeScreenPosition();
   renderer.render(scene, camera);
 }
-
-
-
-
-
 animate();
 
 
