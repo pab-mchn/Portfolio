@@ -56,7 +56,7 @@ scene.add(moon);
 let pab;
 const loader = new GLTFLoader();
 
-loader.load('avatar_hiking.glb', (gltf) => {
+loader.load('avatar_hiking/avatar_hiking.gltf', (gltf) => {
   pab = gltf.scene;
   pab.position.set(-1, -1, 13);
   pab.scale.set(0.01, 0.01, 0.01);
