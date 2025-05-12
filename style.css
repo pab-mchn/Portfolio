@@ -77,6 +77,10 @@ canvas {
     margin-bottom: var(--spacing);
   }
 
+  section.light.project-section{
+    margin-top: -300px;
+  }
+
   blockquote {
     margin: 0;
     padding: 0;
@@ -91,5 +95,47 @@ canvas {
     display: inline;
     line-height: 1;
   }
+ 
+/*projects*/
+.project-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
+.project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
 
+.project img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  flex: 1 1 300px;
+  border-radius: 12px;
+}
+
+.project-text {
+  flex: 2 1 300px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+model-viewer {
+  width: 300px;
+  height: 300px;
+}
+/* Responsive: columna en móviles */
+@media (max-width: 768px) {
+  .project {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-text {
+    text-align: left;
+  }
+}

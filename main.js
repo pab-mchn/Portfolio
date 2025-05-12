@@ -40,7 +40,7 @@ const spaceTexture = new THREE.TextureLoader().load('mountains-clouds-forest-fog
 scene.background = spaceTexture;
 
 // Moon
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
+const moonTexture = new THREE.TextureLoader().load('earth.webp');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -176,6 +176,7 @@ window.addEventListener('click', (event) => {
     window.open('https://github.com/pab-mchn', '_blank'); // ← Cambia "tu_usuario"
   }
 });
+
 
 // Animation Loop
 function animate() {
