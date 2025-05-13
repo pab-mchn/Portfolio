@@ -1,6 +1,10 @@
 @import url("https://use.typekit.net/jmk3xov.css");
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 canvas {
   position: fixed;
@@ -50,23 +54,19 @@ header h2 span {
   font-style: normal;
 }
 
-
-
 canvas {
   position: fixed;
   top: 0;
   left: 0;
 }
 
-
-
-  header {
-    grid-column: 2 / 7;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+header {
+  grid-column: 2 / 7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
   section {
     grid-column: 2 / 12;
@@ -137,5 +137,206 @@ model-viewer {
 
   .project-text {
     text-align: left;
+  }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: white;
+  font-family: sans-serif;
+}
+
+.navbar {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  z-index: 10;
+}
+
+/* Link principal del lado izquierdo */
+.navbar-left a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar-left a:hover {
+  text-decoration: underline;
+}
+
+/* Enlaces del lado derecho */
+.navbar-right a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.navbar-right a:hover {
+  text-decoration: underline;
+}
+
+#brand-name {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#brand-name.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+/* Ícono hamburguesa */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger div {
+  background-color: white;
+  height: 4px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Menú */
+.menu {
+  position: absolute;
+  top: 100%;
+  right: 2rem;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
+  padding: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+.menu.show {
+  display: flex;
+}
+
+/* Animación del brand */
+#brand-name {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#brand-name.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+/* Brand name animation */
+#brand-name {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#brand-name.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+/* Menú desktop visible por defecto */
+.desktop-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.desktop-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hamburguesa oculta por defecto */
+.hamburger,
+.mobile-menu {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger div {
+    background-color: white;
+    height: 4px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 10px;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 1000;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .mobile-menu a:hover {
+    text-decoration: underline;
   }
 }

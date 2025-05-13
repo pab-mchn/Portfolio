@@ -12,9 +12,32 @@
 
     <main>
 
+      <nav class="navbar">
+        <a href="#top" id="brand-name">Pablo Michelini | Web Developer</a>
+      
+        <!-- Menú estándar (desktop) -->
+        <div class="navbar-right desktop-menu">
+          <a href="#top">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+        </div>
+      
+        <!-- Menú hamburguesa (solo mobile) -->
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      
+        <div class="menu mobile-menu" id="menu">
+          <a href="#top">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+        </div>
+      </nav>
+      
+ 
       <header>
-        <h1><span>Pablo Michelini </span></h1>
-        <h2><span>WEB DEVELOPER</span></h2>
 
       </header>
 
@@ -22,7 +45,7 @@
         <p>I just like so much make websites and share knowelde</p>
       </blockquote>
 
-      <section>
+      <section id="about">
         <h2>📜 Manifesto</h2>
 
         <p>
@@ -36,7 +59,7 @@
       </blockquote>
 
 
-      <section class="light">
+      <section id="projects" class="light">
         <h2>🏔️ Projects</h2>
 
         <p>
@@ -49,12 +72,13 @@
       <section class="light project-section">
         <div class="project">
           <model-viewer 
-  src="medieval_money_bag.glb" 
-  alt="avatar" 
-  shadow-intensity="1" 
-  camera-controls 
-  touch-action="pan-y">
-</model-viewer>
+          src="medieval_money_bag.glb" 
+          alt="avatar" 
+          shadow-intensity="1" 
+          camera-controls
+          auto-rotate
+          touch-action="pan-y">
+        </model-viewer>
           <div class="project-text">
             <h2>Donation Website</h2>
             <p>

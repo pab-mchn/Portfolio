@@ -24,23 +24,26 @@ pointLight.position.set(5, 5, 5);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(pointLight, ambientLight);
 
-// Stars
-function addStar() {
-  const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-  const star = new THREE.Mesh(geometry, material);
-  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
-  star.position.set(x, y, z);
-  scene.add(star);
-}
-Array(200).fill().forEach(addStar);
 
-// Background
-const spaceTexture = new THREE.TextureLoader().load('mountains-clouds-forest-fog.webp');
-scene.background = spaceTexture;
+
+// Stars
+// function addStar() {
+//   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+//   const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+//   const star = new THREE.Mesh(geometry, material);
+//   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+//   star.position.set(x, y, z);
+//   scene.add(star);
+// }
+// Array(200).fill().forEach(addStar);
+
+//Background
+// const spaceTexture = new THREE.TextureLoader().load('mountains-clouds-forest-fog.webp');
+// scene.background = spaceTexture;
+scene.background = new THREE.Color(0x1a1a1a);
 
 // Moon
-const moonTexture = new THREE.TextureLoader().load('earth.webp');
+const moonTexture = new THREE.TextureLoader().load('moon.jpg');
 const normalTexture = new THREE.TextureLoader().load('normal.jpg');
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
@@ -49,17 +52,17 @@ const moon = new THREE.Mesh(
     normalMap: normalTexture,
   })
 );
-moon.position.set(-10, 0, 30);
+moon.position.set(-30, 0, 15);
 scene.add(moon);
 
 // Avatar (Pab)
 let pab;
 const loader = new GLTFLoader();
 
-loader.load('avatar_hiking/avatar_hiking.gltf', (gltf) => {
+loader.load('planet_earth/scene.gltf', (gltf) => {
   pab = gltf.scene;
-  pab.position.set(-1, -1, 13);
-  pab.scale.set(0.01, 0.01, 0.01);
+  pab.position.set(0, 0, -120);
+  pab.scale.set(0.001, 0.001, 0.001);
   scene.add(pab);
 
   const direction = new THREE.Vector3();
@@ -68,7 +71,7 @@ loader.load('avatar_hiking/avatar_hiking.gltf', (gltf) => {
   pab.rotation.y = angle + Math.PI - 12;
 
   const targetScale = new THREE.Vector3(14, 14, 14);
-  const duration = 60;
+  const duration = 200;
   let frame = 0;
 
   function scaleIn() {
@@ -97,14 +100,14 @@ document.body.onscroll = moveCamera;
 moveCamera();
 
 // Click → Pab mira a la cámara
-window.addEventListener('click', () => {
-  if (!pab) return;
+// window.addEventListener('click', () => {
+//   if (!pab) return;
 
-  const direction = new THREE.Vector3();
-  direction.subVectors(camera.position, pab.position).normalize();
-  const angle = Math.atan2(direction.x, direction.z);
-  pab.rotation.y = angle + Math.PI - 11;
-});
+//   const direction = new THREE.Vector3();
+//   direction.subVectors(camera.position, pab.position).normalize();
+//   const angle = Math.atan2(direction.x, direction.z);
+//   pab.rotation.y = angle + Math.PI - 11;
+// });
 
 // Arrastrar Pab
 const raycaster = new THREE.Raycaster();
@@ -185,7 +188,7 @@ function animate() {
   moon.rotation.x += 0.005;
 
   if (pab && !isDragging) {
-    pab.rotation.y += 0.005;
+    pab.rotation.y += 0.001;
   }
 
   cube.rotation.y += 0.01;
@@ -198,3 +201,28 @@ function animate() {
 animate();
 
 
+
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
+  const brand = document.getElementById("brand-name");
+
+  // Toggle menú hamburguesa
+  hamburger.addEventListener("click", () => {
+    menu.classList.toggle("show");
+  });
+
+  // Ocultar brand al hacer scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      brand.classList.add("hidden");
+    } else {
+      brand.classList.remove("hidden");
+    }
+  });
+
+  // Cerrar menú al hacer click en un link
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove("show");
+    });
+  });
