@@ -1,0 +1,44 @@
+/* responsive.css */
+/* Media queries and responsive adjustments */
+
+@media (max-width: 768px) {
+    section {
+      grid-column: 2 / 12;
+    }
+  
+    blockquote,
+    .phrase {
+      grid-column: 2 / span 12;
+    }
+  
+    blockquote p {
+      font-size: 2rem;
+    }
+  
+    .project {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .project-text {
+      text-align: left;
+    }
+  
+    .navbar {
+      padding: 1.5rem 1rem;
+    }
+  
+    .navbar-left {
+      margin-left: 0.5rem;
+    }
+  
+    .hamburger {
+      display: flex;
+      margin-right: 0.5rem;
+    }
+  
+    .desktop-menu {
+      display: none;
+    }
+  }
+  

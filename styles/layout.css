@@ -1,0 +1,45 @@
+/* layout.css */
+/* Grid layout and section spacing */
+
+:root {
+    --dark-bg: rgba(15, 15, 15, 0.95);
+    --spacing: 350px;
+    font-family: 'Bungee', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  main {
+    width: 100%;
+    z-index: 99;
+    position: absolute;
+    margin: 0 auto;
+    padding: 120px 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  section {
+    grid-column: 2 / 9;
+    padding: 1rem;
+    background: var(--dark-bg);
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing);
+  }
+  
+  section.light.project-section {
+    margin-top: -300px;
+  }
+  
+  blockquote {
+    grid-column: 6 / span 6;
+    margin: 0;
+    margin-bottom: var(--spacing);
+    padding: 0;
+  }
+  
+  .phrase {
+    grid-column: 2 / span 6;
+  }
+  

@@ -1,0 +1,11 @@
+/* hero.css */
+/* Styles for the top header section */
+
+header {
+    grid-column: 2 / 7;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  

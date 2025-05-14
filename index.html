@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Pablo Website</title>
   </head>
   <body>
-
-    <canvas id="bg"></canvas>   
+    <canvas id="bg"></canvas>
 
     <main>
       <nav class="navbar">
@@ -16,36 +16,31 @@
           <span class="brand-name">Pablo Michelini</span>
           <span class="brand-role">Web Developer</span>
         </div>
-      
-        <!-- Nuevo contenedor para alinear mejor en mobile -->
+
+        <!-- mobile wrapper navbar -->
         <div class="navbar-right-wrapper">
           <div class="navbar-right desktop-menu">
             <a href="#top" id="home-link" class="desktop-menu-link">Home</a>
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
           </div>
-      
-          <!-- Menú hamburguesa -->
+
+          <!-- menu -->
           <div class="hamburger" id="hamburger">
             <div></div>
             <div></div>
             <div></div>
           </div>
         </div>
-      
+
         <div class="menu mobile-menu" id="menu">
           <a href="#top">Home</a>
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
         </div>
       </nav>
-      
- 
-      
- 
-      <header>
 
-      </header>
+      <header></header>
 
       <blockquote class="phrase">
         <p>I just like so much make websites and share knowledge</p>
@@ -53,9 +48,14 @@
 
       <section id="about">
         <h2>About</h2>
-
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
         </p>
       </section>
 
@@ -63,47 +63,50 @@
         <p>Welcome to my Portfolio BTW</p>
       </blockquote>
 
-
       <section id="projects" class="light">
         <h2>🏔️ Projects</h2>
-
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+          est laborum.
         </p>
-      
-
       </section>
 
       <section class="light project-section">
         <div class="project">
-          <model-viewer 
-          src="medieval_money_bag.glb" 
-          alt="avatar" 
-          shadow-intensity="1" 
-          camera-controls
-          auto-rotate
-          touch-action="pan-y">
-        </model-viewer>
+          <model-viewer
+            src="medieval_money_bag.glb"
+            alt="avatar"
+            shadow-intensity="1"
+            camera-controls
+            auto-rotate
+            touch-action="pan-y"
+          ></model-viewer>
           <div class="project-text">
             <h2>Donation Website</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas cumque facilis culpa eum dignissimos similique rerum, ipsum natus consequuntur? Sapiente expedita praesentium recusandae soluta ex. Molestias voluptas aliquid alias veritatis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+              cumque facilis culpa eum dignissimos similique rerum, ipsum natus
+              consequuntur? Sapiente expedita praesentium recusandae soluta ex.
+              Molestias voluptas aliquid alias veritatis.
             </p>
           </div>
         </div>
       </section>
-  
-
 
       <blockquote class="phrase">
         <p>Thanks for watching!</p>
       </blockquote>
-
-
     </main>
-    
-    <script type="module" src="/main.js"></script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 
+    <script type="module" src="/main.js"></script>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
   </body>
 </html>

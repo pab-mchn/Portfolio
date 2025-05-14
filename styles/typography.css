@@ -1,0 +1,28 @@
+/* typography.css */
+/* Fonts, sizes and headings */
+
+h2, h3, blockquote {
+    font-family: elevon, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  header h1 span {
+    font-size: 3rem;
+  }
+  header h2 span {
+    font-size: 2rem;
+  }
+  
+  blockquote p {
+    color: black;
+    background-color: white;
+    font-size: 3rem;
+    display: inline;
+    line-height: 1;
+  }
+  
+  span {
+    padding: 3px;
+  }
+  

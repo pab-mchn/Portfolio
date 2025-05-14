@@ -1,0 +1,15 @@
+/* style.css */
+
+/* General imports */
+@import url('https://use.typekit.net/jmk3xov.css');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+/* Project sections */
+@import './reset.css';
+@import './layout.css';
+@import './typography.css';
+@import './navbar.css';
+@import './hero.css';
+@import './about.css';
+@import './projects.css';
+@import './responsive.css';

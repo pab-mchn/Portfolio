@@ -1,0 +1,36 @@
+/* projects.css */
+/* Styles specific to the Projects section and model viewer */
+
+.project-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .project img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    flex: 1 1 300px;
+    border-radius: 12px;
+  }
+  
+  .project-text {
+    flex: 2 1 300px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  model-viewer {
+    width: 300px;
+    height: 300px;
+  }
+  
