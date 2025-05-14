@@ -11,22 +11,26 @@
     <canvas id="bg"></canvas>   
 
     <main>
-
       <nav class="navbar">
-        <a href="#top" id="brand-name">Pablo Michelini | Web Developer</a>
-      
-        <!-- Menú estándar (desktop) -->
-        <div class="navbar-right desktop-menu">
-          <a href="#top">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+        <div class="navbar-left" id="brand-name">
+          <span class="brand-name">Pablo Michelini</span>
+          <span class="brand-role">Web Developer</span>
         </div>
       
-        <!-- Menú hamburguesa (solo mobile) -->
-        <div class="hamburger" id="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
+        <!-- Nuevo contenedor para alinear mejor en mobile -->
+        <div class="navbar-right-wrapper">
+          <div class="navbar-right desktop-menu">
+            <a href="#top" id="home-link" class="desktop-menu-link">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+          </div>
+      
+          <!-- Menú hamburguesa -->
+          <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       
         <div class="menu mobile-menu" id="menu">
@@ -37,21 +41,22 @@
       </nav>
       
  
+      
+ 
       <header>
 
       </header>
 
-      <blockquote>
-        <p>I just like so much make websites and share knowelde</p>
+      <blockquote class="phrase">
+        <p>I just like so much make websites and share knowledge</p>
       </blockquote>
 
       <section id="about">
-        <h2>📜 Manifesto</h2>
+        <h2>About</h2>
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-
       </section>
 
       <blockquote>
@@ -86,13 +91,11 @@
             </p>
           </div>
         </div>
-      
-
       </section>
   
 
 
-      <blockquote>
+      <blockquote class="phrase">
         <p>Thanks for watching!</p>
       </blockquote>
 
@@ -101,20 +104,6 @@
     
     <script type="module" src="/main.js"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   </body>
 </html>

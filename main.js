@@ -26,16 +26,16 @@ scene.add(pointLight, ambientLight);
 
 
 
-// Stars
-// function addStar() {
-//   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-//   const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
-//   const star = new THREE.Mesh(geometry, material);
-//   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
-//   star.position.set(x, y, z);
-//   scene.add(star);
-// }
-// Array(200).fill().forEach(addStar);
+//Stars
+function addStar() {
+  const geometry = new THREE.SphereGeometry(0.2, 24, 24);
+  const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+  const star = new THREE.Mesh(geometry, material);
+  const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+  star.position.set(x, y, z);
+  scene.add(star);
+}
+Array(200).fill().forEach(addStar);
 
 //Background
 // const spaceTexture = new THREE.TextureLoader().load('mountains-clouds-forest-fog.webp');
@@ -54,6 +54,19 @@ const moon = new THREE.Mesh(
 );
 moon.position.set(-30, 0, 15);
 scene.add(moon);
+
+// sun
+const sunTexture = new THREE.TextureLoader().load('sun.jpg');
+const normalsunTexture = new THREE.TextureLoader().load('normal.jpg');
+const sun = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: sunTexture,
+    normalMap: normalsunTexture,
+  })
+);
+sun.position.set(-60, 30, 15);
+scene.add(sun);
 
 // Avatar (Pab)
 let pab;
@@ -91,6 +104,10 @@ function moveCamera() {
   moon.rotation.x += 0.05;
   moon.rotation.y += 0.075;
   moon.rotation.z += 0.05;
+
+  sun.rotation.x += 0.05;
+  sun.rotation.y += 0.075;
+  sun.rotation.z += 0.05;
 
   camera.position.z = 30 + t * -0.01;
   camera.position.x = t * -0.0002;
@@ -186,6 +203,7 @@ function animate() {
   requestAnimationFrame(animate);
 
   moon.rotation.x += 0.005;
+  sun.rotation.x += 0.005;
 
   if (pab && !isDragging) {
     pab.rotation.y += 0.001;
@@ -202,9 +220,18 @@ animate();
 
 
 
+//navbar
+
   const hamburger = document.getElementById("hamburger");
   const menu = document.getElementById("menu");
   const brand = document.getElementById("brand-name");
+  const homeLink = document.getElementById('home-link');
+
+  window.addEventListener('scroll', () => {
+    const shouldHide = window.scrollY > 50; // o ajustá este valor
+    brand.classList.toggle('hidden', shouldHide);
+    homeLink.style.display = shouldHide ? 'inline' : 'none';
+  });
 
   // Toggle menú hamburguesa
   hamburger.addEventListener("click", () => {
@@ -226,3 +253,48 @@ animate();
       menu.classList.remove("show");
     });
   });
+
+  //drag and drop
+//   let isDraggingMoon = false;
+// let dragOffset = new THREE.Vector3();
+
+// // Al hacer clic en la Luna
+// window.addEventListener('mousedown', (event) => {
+//   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+//   raycaster.setFromCamera(mouse, camera);
+//   const intersects = raycaster.intersectObject(moon);
+
+//   if (intersects.length > 0) {
+//     isDraggingMoon = true;
+
+//     // Calculamos la diferencia entre la posición del mouse y la de la luna
+//     dragOffset.copy(intersects[0].point).sub(moon.position);
+//   }
+// });
+
+// // Mientras se mueve el mouse
+// window.addEventListener('mousemove', (event) => {
+//   if (!isDraggingMoon) return;
+
+//   // Actualizamos el rayo con la nueva posición del mouse
+//   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+//   raycaster.setFromCamera(mouse, camera);
+
+//   // Calculamos un plano donde la luna se moverá
+//   const planeZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), -moon.position.z);
+//   const intersectionPoint = new THREE.Vector3();
+
+//   raycaster.ray.intersectPlane(planeZ, intersectionPoint);
+//   if (intersectionPoint) {
+//     moon.position.copy(intersectionPoint.sub(dragOffset));
+//   }
+// });
+
+// // Al soltar el mouse
+// window.addEventListener('mouseup', () => {
+//   isDraggingMoon = false;
+// });

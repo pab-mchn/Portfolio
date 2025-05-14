@@ -37,7 +37,6 @@ main {
 }
 
 span{
-  background-color: var(--dark-bg);
   padding: 3px;
 }
 
@@ -69,13 +68,15 @@ header {
 }
 
   section {
-    grid-column: 2 / 12;
+    grid-column: 2 / 9;
     padding: 1rem;
     background: var(--dark-bg);
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: var(--spacing);
   }
+
+ 
 
   section.light.project-section{
     margin-top: -300px;
@@ -84,8 +85,12 @@ header {
   blockquote {
     margin: 0;
     padding: 0;
-    grid-column: 2 / span 9;
+    grid-column: 6 / span 6;
     margin-bottom: var(--spacing);
+  }
+
+  .phrase {
+    grid-column: 2 / span 6;
   }
 
   blockquote p {
@@ -128,6 +133,24 @@ model-viewer {
   width: 300px;
   height: 300px;
 }
+
+@media (max-width: 768px) {
+  section {
+    grid-column: 2 / 12;
+  }
+  blockquote {
+    grid-column: 2 / span 12;
+  }
+  .phrase {
+    grid-column: 2 / span 12;
+  }
+  blockquote p {
+
+    font-size: 2rem;
+
+}
+
+}
 /* Responsive: columna en móviles */
 @media (max-width: 768px) {
   .project {
@@ -144,7 +167,7 @@ model-viewer {
 body {
   margin: 0;
   padding: 0;
-  background: #111;
+  background: #1a1a1a;
   color: white;
   font-family: sans-serif;
 }
@@ -173,7 +196,7 @@ body {
 }
 
 .navbar-left a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Enlaces del lado derecho */
@@ -184,9 +207,15 @@ body {
   font-weight: bold;
   font-size: 1rem;
 }
+#home-link {
+  display: none;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 .navbar-right a:hover {
-  text-decoration: underline;
+  text-decoration:none;
 }
 
 #brand-name {
@@ -239,7 +268,7 @@ body {
 }
 
 .menu a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .menu.show {
@@ -281,6 +310,12 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
+}
+
+.navbar-right-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Hamburguesa oculta por defecto */
@@ -340,3 +375,50 @@ body {
     text-decoration: underline;
   }
 }
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 1rem; /* menos padding para más espacio */
+  }
+
+  .navbar-left {
+    margin-left: 0.5rem;
+  }
+
+  .hamburger {
+    margin-right: 0.5rem; /* espaciado uniforme con la izquierda */
+  }
+}
+
+/* Estilo base */
+.navbar-left {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-name {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.brand-role {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: normal;
+  opacity: 0.8;
+}
+
+/* Estilos móviles */
+@media (max-width: 768px) {
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .brand-role {
+    font-size: 0.75rem;
+  }
+}
+
