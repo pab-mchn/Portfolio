@@ -36,9 +36,7 @@ function addStar() {
 }
 Array(200).fill().forEach(addStar);
 
-//Background
-// const spaceTexture = new THREE.TextureLoader().load('mountains-clouds-forest-fog.webp');
-// scene.background = spaceTexture;
+
 scene.background = new THREE.Color(0x1a1a1a);
 
 // Moon
@@ -96,7 +94,7 @@ loader.load('planet_earth/scene.gltf', (gltf) => {
   scaleIn();
 });
 
-// Scroll Animation (sin afectar a pab)
+// Scroll Animation
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
 
@@ -115,17 +113,8 @@ function moveCamera() {
 document.body.onscroll = moveCamera;
 moveCamera();
 
-// Click → Pab mira a la cámara
-// window.addEventListener('click', () => {
-//   if (!pab) return;
 
-//   const direction = new THREE.Vector3();
-//   direction.subVectors(camera.position, pab.position).normalize();
-//   const angle = Math.atan2(direction.x, direction.z);
-//   pab.rotation.y = angle + Math.PI - 11;
-// });
-
-// Arrastrar Pab
+// move pab
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 let isDragging = false;
@@ -174,7 +163,7 @@ const cube = new THREE.Mesh(
 );
 scene.add(cube);
 
-// Mantener el cubo en esquina inferior derecha
+// cube in right bottom corner
 function updateCubeScreenPosition() {
   const vector = new THREE.Vector3(0.78, -0.78, 0.1); // NDC
   vector.unproject(camera);
@@ -185,14 +174,14 @@ function updateCubeScreenPosition() {
   targetCubePosition.copy(pos);
 }
 
-// Click en cubo abre GitHub
+// Click to GitHub
 window.addEventListener('click', (event) => {
 
   raycaster.setFromCamera(mouse, camera);
   const intersects = raycaster.intersectObject(cube);
 
   if (intersects.length > 0) {
-    window.open('https://github.com/pab-mchn', '_blank'); // ← Cambia "tu_usuario"
+    window.open('https://github.com/pab-mchn', '_blank');
   }
 });
 
@@ -237,63 +226,23 @@ animate();
     menu.classList.toggle("show");
   });
 
-  // Ocultar brand al hacer scroll
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      brand.classList.add("hidden");
-    } else {
-      brand.classList.remove("hidden");
-    }
+  // hide brand scroll scroll
+  window.addEventListener('scroll', () => {
+    const brand = document.getElementById('brand-name');
+    const homeLink = document.getElementById('home-link');
+  
+    const shouldHide = window.scrollY > 50;
+  
+    if (brand) brand.classList.toggle('hidden', shouldHide);
+    if (homeLink) homeLink.style.display = shouldHide ? 'inline' : 'none';
   });
 
-  // Cerrar menú al hacer click en un link
+  // close menu after click 
   document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.remove("show");
     });
   });
 
-  //drag and drop
-//   let isDraggingMoon = false;
-// let dragOffset = new THREE.Vector3();
 
-// // Al hacer clic en la Luna
-// window.addEventListener('mousedown', (event) => {
-//   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-//   raycaster.setFromCamera(mouse, camera);
-//   const intersects = raycaster.intersectObject(moon);
-
-//   if (intersects.length > 0) {
-//     isDraggingMoon = true;
-
-//     // Calculamos la diferencia entre la posición del mouse y la de la luna
-//     dragOffset.copy(intersects[0].point).sub(moon.position);
-//   }
-// });
-
-// // Mientras se mueve el mouse
-// window.addEventListener('mousemove', (event) => {
-//   if (!isDraggingMoon) return;
-
-//   // Actualizamos el rayo con la nueva posición del mouse
-//   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-//   raycaster.setFromCamera(mouse, camera);
-
-//   // Calculamos un plano donde la luna se moverá
-//   const planeZ = new THREE.Plane(new THREE.Vector3(0, 0, 1), -moon.position.z);
-//   const intersectionPoint = new THREE.Vector3();
-
-//   raycaster.ray.intersectPlane(planeZ, intersectionPoint);
-//   if (intersectionPoint) {
-//     moon.position.copy(intersectionPoint.sub(dragOffset));
-//   }
-// });
-
-// // Al soltar el mouse
-// window.addEventListener('mouseup', () => {
-//   isDraggingMoon = false;
-// });
