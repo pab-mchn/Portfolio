@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { gsap } from "gsap";
 // Setup
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -244,4 +245,32 @@ animate();
   });
 
 
+  document.querySelectorAll("blockquote p").forEach((el) => {
+    // Iniciamos el blockquote oculto y ligeramente desplazado
+    gsap.set(el.parentElement, { opacity: 0, y: 20 });
 
+    ScrollTrigger.create({
+      trigger: el,
+      start: "top 85%",
+      onEnter: () => {
+        // Aparece suavemente el blockquote con un ligero movimiento
+        gsap.to(el.parentElement, {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+        });
+
+        // Animación tipo “ondulación generativa” sutil con y oscillando lento
+        gsap.to(el, {
+          y: 5,
+          duration: 3,
+          ease: "sine.inOut",
+          yoyo: true,
+          repeat: -1,
+          delay: 0.5,
+        });
+      },
+      toggleActions: "play reset play reset",
+    });
+  });
