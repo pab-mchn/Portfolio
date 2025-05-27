@@ -1,11 +1,33 @@
-/* hero.css */
-/* Styles for the top header section */
-
 header {
-    grid-column: 2 / 7;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
+  grid-column: 1 / -1;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Scroll text fijo en el fondo y centrado */
+.scroll-down-text {
+  position: absolute;
+  inset-inline: 0; /* igual a left: 0; right: 0 */
+  top: 39rem;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  animation: bounce 2s infinite;
+  pointer-events: none; /* evita clics innecesarios */
+}
+
+/* Animación rebote */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.hidden {
+  opacity: 0;
+}

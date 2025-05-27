@@ -245,4 +245,11 @@ animate();
   });
 
 
-  
+  //scroll down
+  const scrollIndicator = document.getElementById('scroll-down-indicator');
+
+window.addEventListener('scroll', () => {
+  const shouldHide = window.scrollY > 50;
+
+  if (scrollIndicator) scrollIndicator.classList.toggle('hidden', shouldHide);
+});
