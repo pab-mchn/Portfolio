@@ -65,7 +65,7 @@ const sun = new THREE.Mesh(
 sun.position.set(-60, 30, 15);
 scene.add(sun);
 
-// dead Start
+// asteroid
 const asteroidTexture = new THREE.TextureLoader().load('cliff_side.webp');
 const normalasteroidTexture = new THREE.TextureLoader().load('normal.jpg');
 const asteroid = new THREE.Mesh(
@@ -191,6 +191,7 @@ function updateCubeScreenPosition() {
   targetCubePosition.copy(pos);
 }
 
+
 // Click to GitHub
 window.addEventListener('click', (event) => {
 
@@ -201,6 +202,12 @@ window.addEventListener('click', (event) => {
     window.open('https://github.com/pab-mchn', '_blank');
   }
 });
+
+window.addEventListener('mousemove', (event) => {
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+});
+
 
 
 // Animation Loop
@@ -218,6 +225,16 @@ function animate() {
   cube.rotation.y += 0.01;
   cube.rotation.x += 0.005;
   cube.position.lerp(targetCubePosition, 0.1);
+
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObject(cube);
+
+  if (intersects.length > 0) {
+    document.body.style.cursor = 'pointer';
+  } else {
+    document.body.style.cursor = 'default';
+  }
+
 
   updateCubeScreenPosition();
   renderer.render(scene, camera);
