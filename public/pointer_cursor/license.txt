@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pointer Cursor
+* source:	https://sketchfab.com/3d-models/pointer-cursor-ced1782f905f47e49cc70d354e06f290
+* author:	adarose (https://sketchfab.com/adarose)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pointer Cursor" (https://sketchfab.com/3d-models/pointer-cursor-ced1782f905f47e49cc70d354e06f290) by adarose (https://sketchfab.com/adarose) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

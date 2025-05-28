@@ -45,9 +45,55 @@
   .project-images img {
     width: 100%;
     max-width: 320px; /* tamaño fijo más chico */
+    height: 200px;
     object-fit: cover;
   }
   .badge-row img{
   width: 120px;
   height: 30px
   }
+
+  .project-images {
+    display: flex;
+    gap: 1em;
+  }
+  
+  .image-link {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .image-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  }
+  
+  .image-link:hover img {
+    filter: blur(3px);
+  }
+  
+  .image-link:hover .overlay-text {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
