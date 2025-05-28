@@ -65,6 +65,19 @@ const sun = new THREE.Mesh(
 sun.position.set(-60, 30, 15);
 scene.add(sun);
 
+// dead Start
+const asteroidTexture = new THREE.TextureLoader().load('cliff_side.webp');
+const normalasteroidTexture = new THREE.TextureLoader().load('normal.jpg');
+const asteroid = new THREE.Mesh(
+  new THREE.SphereGeometry(3, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: asteroidTexture,
+    normalMap: normalasteroidTexture,
+  })
+);
+asteroid.position.set(-30, 0, 50);
+scene.add(asteroid);
+
 // Avatar (Pab)
 let pab;
 const loader = new GLTFLoader();
@@ -105,6 +118,10 @@ function moveCamera() {
   sun.rotation.x += 0.05;
   sun.rotation.y += 0.075;
   sun.rotation.z += 0.05;
+
+  asteroid.rotation.x += 0.05;
+  asteroid.rotation.y += 0.075;
+  asteroid.rotation.z += 0.05;
 
   camera.position.z = 30 + t * -0.01;
   camera.position.x = t * -0.0002;
@@ -192,6 +209,7 @@ function animate() {
 
   moon.rotation.x += 0.005;
   sun.rotation.x += 0.005;
+  asteroid.rotation.x += 0.005;
 
   if (pab && !isDragging) {
     pab.rotation.y += 0.001;
