@@ -94,7 +94,9 @@
               A platform that helps creators—especially in Latin America—receive donations via Mercado Pago and PayPal, solving common payment barriers in Latam. 
               Supporters can donate and get exclusive content in return. 
               Built to make supporting creators easier and more rewarding.
+              <button class="read-more-btn" data-project="donation">Read More</button>
             </p>
+          
           </div>
           <div class="project-images">
             <img src="donation-website1.png" alt="Screenshot 1" />
@@ -131,6 +133,7 @@
               cumque facilis culpa eum dignissimos similique rerum, ipsum natus
               consequuntur? Sapiente expedita praesentium recusandae soluta ex.
               Molestias voluptas aliquid alias veritatis.
+              <button class="read-more-btn" data-project="mpfans">Read More</button>
             </p>
           </div>
           <div class="project-images">
@@ -156,7 +159,18 @@
       </blockquote>
     </main>
 
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="modal-close" class="modal-close">&times;</span>
+        <div id="modal-body">
+          <!-- Aquí va el contenido dinámico -->
+        </div>
+      </div>
+    </div>
+
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/modal.js"></script>
+
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"

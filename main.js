@@ -289,3 +289,4 @@ window.addEventListener('scroll', () => {
   if (scrollIndicator) scrollIndicator.classList.toggle('hidden', shouldHide);
 });
 
+
