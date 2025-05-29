@@ -80,14 +80,24 @@
     color: white;
     font-weight: bold;
     font-size: 1em;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    opacity: 1; /* Siempre visible */
+    pointer-events: none; /* No interfiere con clics */
     text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.4em 1em;
+    border-radius: 0.3em;  
+  }
+  
+  .image-link img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: filter 0.3s ease;
   }
   
   .image-link:hover img {
-    filter: blur(3px);
+    filter: blur(3px); /* Solo en hover */
   }
   
   .image-link:hover .overlay-text {

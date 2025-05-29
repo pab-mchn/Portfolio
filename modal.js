@@ -4,25 +4,52 @@ const modalClose = document.getElementById('modal-close');
 
 const projectDetails = {
   donation: `
-    <h2>Donation Website</h2>
-    <p>Plataforma para que creadores en Latinoamérica puedan recibir donaciones vía Mercado Pago y PayPal, resolviendo barreras comunes.</p>
+    <h2>The Problem to solve:</h2>
+    <p>      Many creators in Latin America face difficulties receiving donations from their supporters.
+      Mercado Pago works well locally but becomes impractical when dealing with different countries, currencies, and regional restrictions.
+      PayPal can work as an international alternative, but it's not always the ideal first choice in the region, and platforms like Cafecito, Ko-fi, or Buy Me a Coffee don't adapt well to the Latin American reality.</p>
+    <h2>The Solution:</h2>
+     <p>
+      I built a platform specifically for this context. The interface is simple and straightforward:
+    </p>
     <ul>
-      <li>Soporte exclusivo para fans</li>
-      <li>Interfaz sencilla</li>
-      <li>Implementación segura y confiable</li>
+      <li>If the donor is in the same country as the creator, they can donate easily via Mercado Pago.</li>
+      <li>If the donor is abroad or Mercado Pago isn't an option, PayPal is offered as an immediate alternative.</li>
     </ul>
+    <h3>Additional Features:</h3>
+    <p>
+      Beyond handling donations, the platform allows creators to visually highlight:
+    </p>
+    <ul>
+      <li>Content they are offering in exchange for support</li>
+      <li>Links to their social media, projects, or any relevant external pages</li>
+    </ul>
+    <p>
+      All in one place—designed to make supporting creators in Latin America easier, more accessible.
+    </p>
 
   `,
   mpfans: `
-    <h2>Mp Fans</h2>
-    <p>Proyecto para fans que permite interactuar con contenido exclusivo y novedades sobre sus creadores favoritos.</p>
-    <ul>
-      <li>Integración con redes sociales</li>
-      <li>Actualizaciones en tiempo real</li>
-      <li>Diseño responsivo</li>
-    </ul>
+      <h2>The Problem to Solve:</h2>
+  <p>
+    Mercado Pago is the most popular payment solution in Latin America, but its API can be frustrating to use.
+    The official documentation is often unclear, and community support is limited compared to more global payment tools like Stripe or PayPal.
+    This creates a steep learning curve for developers—especially those just starting out—who want to integrate it into their websites or apps.
+  </p>
+  <h2>The Solution:</h2>
+  <p>
+    MP Fans is an alternative and growing documentation site focused on making the Mercado Pago API more approachable and developer-friendly.
+    It provides practical resources to help developers of all levels work with the API efficiently.
+  </p>
+  <ul>
+    <li>Step-by-step video tutorials</li>
+    <li>Clear and concise technical articles</li>
+    <li>Support and comunnity behind</li>
+  </ul>
+  <p>
+    The goal is to make the power of Mercado Pago accessible to more developers across Latin America, by offering the kind of guidance and examples the official docs often lack.
+  </p>
   `,
-  // Agrega otros proyectos aquí, p.ej. 'project3': 'contenido'
 };
 
 // Abrir modal al click en botón Read More
