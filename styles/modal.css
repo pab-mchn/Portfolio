@@ -44,7 +44,7 @@
     cursor: pointer;
     font: inherit;      
     padding: 0; 
-    vertical-align: middle; /* o middle */
+    vertical-align: middle; 
   display: inline;      
   }
   

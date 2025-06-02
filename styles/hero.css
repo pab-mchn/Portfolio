@@ -8,21 +8,21 @@ header {
   align-items: center;
 }
 
-/* Scroll text fijo en el fondo y centrado */
+
 .scroll-down-text {
   position: absolute;
-  inset-inline: 0; /* igual a left: 0; right: 0 */
-  top: 33rem;
+  inset-inline: 0; 
+  top: 35rem;
   text-align: center;
   font-size: 1rem;
   color: white;
   opacity: 1;
   transition: opacity 0.5s ease;
   animation: bounce 2s infinite;
-  pointer-events: none; /* evita clics innecesarios */
+  pointer-events: none; 
 }
 
-/* Animación rebote */
+
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(8px); }

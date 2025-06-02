@@ -97,7 +97,7 @@
   }
   
   .image-link:hover img {
-    filter: blur(3px); /* Solo en hover */
+    filter: blur(3px); 
   }
   
   .image-link:hover .overlay-text {

@@ -43,3 +43,19 @@ blockquote {
 .phrase {
   grid-column: 6 / span 6;
 }
+
+.link-to-btn {
+  background: none;
+  border: none;
+  color:  #2980b9;     
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;      
+  padding: 0; 
+  vertical-align: middle; 
+display: inline;      
+}
+
+.link-to-btn:hover {
+  color: #3392d1; 
+}
