@@ -4,11 +4,11 @@ const modalClose = document.getElementById('modal-close');
 
 const projectDetails = {
   donation: `
-    <h2>The Problem to solve:</h2>
+    <h2> 🔧The Problem to solve:</h2>
     <p> Many creators in Latin America face difficulties receiving donations from their supporters.
       Mercado Pago works well locally but becomes impractical when dealing with different countries, currencies, and regional restrictions.
       PayPal can work as an international alternative, but it's not always the ideal first choice in the region, and platforms like Cafecito, Ko-fi, or Buy Me a Coffee don't adapt well to the Latin American reality.</p>
-    <h2>The Solution:</h2>
+    <h2>💡 The Solution:</h2>
      <p>
       I built a platform specifically for this context. The interface is simple and straightforward:
     </p>
@@ -30,13 +30,13 @@ const projectDetails = {
 
   `,
   mpfans: `
-      <h2>The Problem to Solve:</h2>
+    <h2>🔧 The Problem to Solve:</h2>
   <p>
     Mercado Pago is the most popular payment solution in South America, but its API can be frustrating to use.
     The official documentation is often unclear, and community support is limited compared to more global payment tools like Stripe or PayPal.
     This creates a steep learning curve for developers—especially those just starting out—who want to integrate it into their websites or apps.
   </p>
-  <h2>The Solution:</h2>
+  <h2>💡 The Solution:</h2>
   <p>
     MP Fans is an alternative and growing documentation site focused on making the Mercado Pago API more approachable and developer-friendly.
     It provides practical resources to help developers of all levels work with the API efficiently.

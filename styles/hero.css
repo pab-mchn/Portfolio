@@ -12,7 +12,7 @@ header {
 .scroll-down-text {
   position: absolute;
   inset-inline: 0; /* igual a left: 0; right: 0 */
-  top: 30rem;
+  top: 33rem;
   text-align: center;
   font-size: 1rem;
   color: white;
