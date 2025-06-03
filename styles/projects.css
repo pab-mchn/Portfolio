@@ -44,7 +44,7 @@
   
   .project-images img {
     width: 100%;
-    max-width: 320px; /* tamaño fijo más chico */
+    max-width: 320px; 
     height: 200px;
     object-fit: cover;
   }

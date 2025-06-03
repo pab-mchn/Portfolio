@@ -51,8 +51,7 @@ blockquote {
   text-decoration: none;
   cursor: pointer;
   font: inherit;      
-  padding: 0; 
-  vertical-align: middle; 
+
 display: inline;      
 }
 
