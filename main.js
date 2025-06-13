@@ -108,6 +108,7 @@ loader.load('planet_earth/scene.gltf', (gltf) => {
   scaleIn();
 });
 
+
 // Scroll Animation
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
