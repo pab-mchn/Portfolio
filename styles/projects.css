@@ -48,6 +48,12 @@
     height: 200px;
     object-fit: cover;
   }
+
+  .badge-row {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    }
   .badge-row img{
   width: 120px;
   height: 30px

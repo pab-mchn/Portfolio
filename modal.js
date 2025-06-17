@@ -50,6 +50,22 @@ const projectDetails = {
     The goal is to make the power of Mercado Pago accessible to more developers across South America, by offering the kind of guidance and examples the official docs often lack.
   </p>
   `,
+  maker3d: `
+  <h2>🔧 The Problem to Solve:</h2>
+  <p>
+    As a 3D enthusiast, I’ve often found that even simple models can take too long to create from scratch in traditional 3D software.
+    Whether it’s building basic shapes for a prototype, converting a logo into a 3D asset, or just visualizing ideas, the process can get in the way of creativity.
+  </p>
+  <h2>💡 The Solution:</h2>
+  <p>
+    I built a tool that helps creators quickly generate ready-to-use 3D content from 2D input:
+  </p>
+  <ul>
+    <li>With just an image, you can generate clean geometric 3D shapes.</li>
+    <li>With an SVG file, the system instantly converts it into a 3D logo or shape—ideal for branding, and reade for use in a website</li>
+  </ul>
+`,
+
 };
 
 // Abrir modal al click en botón Read More
