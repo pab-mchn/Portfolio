@@ -36,18 +36,4 @@
     cursor: pointer;
   }
   
-  .read-more-btn {
-    background: none;
-    border: none;
-    color:  #2980b9;     
-    text-decoration: none;
-    cursor: pointer;
-    font: inherit;      
-    padding: 0; 
-    vertical-align: middle; 
-  display: inline;      
-  }
-  
-  .read-more-btn:hover {
-    color: #3392d1; 
-  }
+ 

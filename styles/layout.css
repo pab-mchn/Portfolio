@@ -44,17 +44,22 @@ blockquote {
   grid-column: 6 / span 6;
 }
 
-.link-to-btn {
+.link-to-btn,
+.read-more-btn {
   background: none;
   border: none;
-  color:  #2980b9;     
+  color: #2980b9;
   text-decoration: none;
   cursor: pointer;
-  font: inherit;      
-
-display: inline;      
+  padding: 0;
+  font: inherit;
+  line-height: inherit;
+  vertical-align: baseline;
+  display: inline;         
 }
 
-.link-to-btn:hover {
-  color: #3392d1; 
+.link-to-btn:hover,
+.read-more-btn:hover {
+  color: #3392d1;
+  text-decoration: underline;
 }
