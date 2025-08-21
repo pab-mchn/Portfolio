@@ -107,3 +107,26 @@
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
   }
+
+  @media (max-width: 768px) {
+
+    .navbar {
+      padding: 1.5rem 1rem;
+    }
+  
+    .navbar-left {
+      margin-left: 0.5rem;
+    }
+  
+    .hamburger {
+      display: flex;
+      margin-right: 0.5rem;
+    }
+  
+    .desktop-menu {
+      display: none;
+    }
+    .scroll-down-text {
+      top: 27rem; 
+    }
+  }

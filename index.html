@@ -8,24 +8,24 @@
     <meta name="description" content="Portfolio of Pablo Michelini, Web Developer and Content Creator. Projects, blog, tutorials and more." />
     <title>Pablo Website</title>
   </head>
-  <body>
+  <body >
     <canvas id="bg"></canvas>
 
     <main>
       <nav class="navbar">
         <div class="navbar-left" id="brand-name">
           <span class="brand-name">Pablo Michelini</span>
-          <span class="brand-role">Web Developer & Content Creator</span>
+          <span class="brand-role">Web Developer</span>
         </div>
 
         <!-- mobile wrapper navbar -->
         <div class="navbar-right-wrapper">
           <div class="navbar-right desktop-menu">
             <a href="#top" id="home-link" class="desktop-menu-link">Home</a>
-            <a href="#about">About</a>
+            <!-- <a href="#about">About</a> -->
             <a href="#projects">Projects</a>
-            <a href="https://www.onthecode.blog/" target="_blank">Blog</a>
-            <a  href="https://www.youtube.com/@onthecode" target="_blank">Videos</a>
+            <!-- <a href="https://www.onthecode.blog/" target="_blank">Blog</a> -->
+            <!-- <a  href="https://www.youtube.com/@onthecode" target="_blank">Videos</a> -->
             <a href="#contact">Contact</a>
           </div>
 
@@ -38,246 +38,92 @@
         </div>
 
         <div class="menu mobile-menu" id="menu">
-          <a href="#top">Home</a>
-          <a href="#about">About</a>
+          <!-- <a href="#top">Home</a> -->
+          <!-- <a href="#about">About</a> -->
           <a href="#projects">Projects</a>
-          <a href="https://www.onthecode.blog/" target="_blank">Blog</a>
-          <a  href="https://www.youtube.com/@onthecode" target="_blank">Videos</a>
+          <!-- <a href="https://www.onthecode.blog/" target="_blank">Blog</a> -->
+          <!-- <a  href="https://www.youtube.com/@onthecode" target="_blank">Videos</a> -->
           <a href="#contact">Contact</a>
         </div>
       </nav>
 
-      <header>
-        <p id="scroll-down-indicator" class="scroll-down-text">↓ Scroll down</p>
-      </header>
 
-      <blockquote class="phrase">
-        <p>I love learning and documenting what I discover along the way.</p>
-      </blockquote>
-
-      <section id="about">
-        <h2>🧉 About</h2>
-        <p>
-          I’m a developer who sees programming as a tool to create software solutions that help people. 
-          Alongside coding, I write documentation, create <a class="link-to-btn" href="https://www.youtube.com/@onthecode" target="_blank" rel="noopener noreferrer">video tutorials</a> and
-          <a class="link-to-btn" href="https://www.onthecode.blog/" target="_blank" rel="noopener noreferrer">technical articles</a>. 
-        </p>
-        <p>I like the idea of learning, writing, teaching, sharing, and helping.</p>
-        <div class="badge-row">
-          <h3> 👾 Technologies that I use</h3>
-          <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff" alt="Next.js" />
-          <img src="https://img.shields.io/badge/REACT-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-          <img src="https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=ffffff" alt="TypeScript" />
-          <img src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000" alt="JavaScript" />
-          <img src="https://img.shields.io/badge/NODE.JS-339933?style=for-the-badge&logo=nodedotjs&logoColor=ffffff" alt="Node.js" />
-          <img src="https://img.shields.io/badge/EXPRESS-000000?style=for-the-badge&logo=express&logoColor=ffffff" alt="Express" />
-          <h3> 🌎 Social </h3>
-          <a href="https://github.com/pab-mchn" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=ffffff" alt="GitHub" />
-          </a>
-          <a href="https://www.youtube.com/@onthecode" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=ffffff" alt="YouTube" />
-          </a>
-          <a href="https://onthecode.blog/" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/Blog-003366?style=for-the-badge&logo=rss&logoColor=white" alt="Blog" />
-          </a>
-        </div>
-      </section>
-
-      <blockquote class="phrase">
-        <p>Welcome to my Portfolio BTW</p>
-      </blockquote>
-
-      <section id="projects" class="light">
-        <h2>🏔️ Projects</h2>
-        <p>
-          I write code, learn, and share knowledge every day.  
-          Here are some projects that reflect the kind of things I enjoy building.  
-          If you’re curious to see more code or learn about what else I do, feel free to 
-          <a class="link-to-btn" href="mailto:pablomichelini91@gmail.com">get in touch!</a>
-        </p>
-<div class="badge-row">
-  <h3>🌎 More projects and code</h3>
-  <a href="https://github.com/pab-mchn" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=ffffff" alt="GitHub" />
-  </a>
-  <a href="https://www.youtube.com/@onthecode" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=ffffff" alt="YouTube" />
-  </a>
-  <a href="https://onthecode.blog/" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Blog-003366?style=for-the-badge&logo=rss&logoColor=white" alt="Blog" />
-  </a>
-</div>
-      </section>
-
-      <section class="light project-section">
-        <div class="project">
-          <model-viewer
-            src="cute_cup/scene.gltf"
-            alt="avatar"
-            shadow-intensity="1"
-            camera-controls
-            auto-rotate
-            touch-action="pan-y"
-            poster="cup.png"
-          ></model-viewer>
-          <div class="project-text">
-            <h3>1. Donation Website</h3>
-            <p>
-              A platform that helps creators—especially in South America—receive donations via Mercado Pago (Popular payment method in South America) and PayPal, solving common payment barriers. 
-              Supporters can donate and get exclusive content in return. 
-              Built to make supporting creators easier and more rewarding.
-              <button class="read-more-btn" data-project="donation">Read More</button> and  <a class="link-to-btn" href="https://www.ondecode.dev/" target="_blank" rel="noopener noreferrer">Visit Site</a>  
-            </p>
-                       
-            <div class="badge-row">
-              <h3>Tech-Stack</h3>
-              <img src="https://img.shields.io/badge/REACT-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-              <img src="https://img.shields.io/badge/NODE.JS-339933?style=for-the-badge&logo=nodedotjs&logoColor=ffffff" alt="Node.js" />
-              <img src="https://img.shields.io/badge/EXPRESS-000000?style=for-the-badge&logo=express&logoColor=ffffff" alt="Express" />
-              <img src="https://img.shields.io/badge/REST%20API-005571?style=for-the-badge&logo=api&logoColor=ffffff" alt="REST API" />
-            </div>
-          
-          </div>
-          <!-- <div class="project-images">
-            <a href="https://www.ondecode.dev" target="_blank" class="image-link">
-              <img src="linktowebsitewhite.png" alt="Screenshot 1" />
-              <div class="overlay-text">Visit Site</div>
-            </a>
-          </div> -->
-          
-        </div>
-        
-      </section>
-
-      <section class="light project-section">
-        <div class="project">
-          <model-viewer
-            src="book_open/scene.gltf"
-            alt="avatar"
-            shadow-intensity="1"
-            camera-controls
-            auto-rotate
-            touch-action="pan-y"
-            poster="book.png"
-          ></model-viewer>
-          <div class="project-text">
-            <h3>2. Mp Fans</h3>
-            <p>
-              MP Fans is an alternative and growing documentation site focused on payment integrations for developers.
-              centered on Mercado Pago API (Popular payment method in South America).
-              It features clear, step-by-step video tutorials and technical articles.            
-                <button class="read-more-btn" data-project="mpfans">Read More</button> and  <a class="link-to-btn" href="https://pab-mchn.github.io/MPfans" target="_blank" rel="noopener noreferrer">Visit Site</a>  
-            </p>
-            <div class="badge-row">
-              <h3>Tech-Stack</h3>
-              <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff" alt="Next.js" />
-              <img src="https://img.shields.io/badge/REACT-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-              <img src="https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=ffffff" alt="TypeScript" />
-              <img src="https://img.shields.io/badge/JAVASCRIPT-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000000" alt="JavaScript" />
-              <img src="https://img.shields.io/badge/NODE.JS-339933?style=for-the-badge&logo=nodedotjs&logoColor=ffffff" alt="Node.js" />
-              <img src="https://img.shields.io/badge/EXPRESS-000000?style=for-the-badge&logo=express&logoColor=ffffff" alt="Express" />
-            </div>
-          </div>
-
-            </div>
-      </section>
-
-      <!-- <section class="light project-section">
-        <div class="project">
-          <model-viewer
-            src="space_invader/scene.gltf"
-            alt="avatar"
-            shadow-intensity="1"
-            camera-controls
-            auto-rotate
-            touch-action="pan-y"
-            poster="space_invader.png"
-          ></model-viewer>
-          <div class="project-text">
-            <h3>3. 3D maker</h3>
-            <p>
-              This project transforms both SVG vector logos and raster images (PNG, JPG) into dynamic, animated 3D objects.
-                <button class="read-more-btn" data-project="maker3d">Read More</button> and  <a class="link-to-btn" href="https://3dwebmaker.vercel.app/" target="_blank" rel="noopener noreferrer">Visit Site</a>  
-            </p>
-            <div class="badge-row">
-              <h3>Tech-Stack</h3>
-              <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff" alt="Next.js" />
-              <img src="https://img.shields.io/badge/TAILWIND_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=ffffff" alt="Tailwind CSS" />
-              <img src="https://img.shields.io/badge/THREE.JS-000000?style=for-the-badge&logo=three.js&logoColor=ffffff" alt="Three.js" />
-              <img src="https://img.shields.io/badge/REACT_THREE_FIBER-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Three Fiber" />
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <section class="light project-section">
-        <div class="project">
-          <model-viewer
-            src="inkwell/scene.gltf"
-            alt="avatar"
-            shadow-intensity="1"
-            camera-controls
-            auto-rotate
-            touch-action="pan-y"
-            poster="pen.png"
-          ></model-viewer>
-          <div class="project-text">
-            <h3>3. Content Creator</h3>
-            <p>
-              I make tech content — video tutorials and technical articles (in Spanish). I enjoy sharing knowledge and connecting with the dev community.
-            </p>
-            <div class="badge-row">
-            <a href="https://www.youtube.com/@onthecode" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=ffffff" alt="YouTube" />
-            </a>
-            <a href="https://onthecode.blog/" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.shields.io/badge/Blog-003366?style=for-the-badge&logo=rss&logoColor=white" alt="Blog" />
-            </a>
-            <a href="https://github.com/pab-mchn" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=ffffff" alt="GitHub" />
-            </a>
-          </div>
-          </div>
-        </div>
-      </section>
-
-      <section id='contact'>
-        <h2>🌎 Contact</h2>
-        <p>If you're curious about more code or anything else I do, feel free to reach out!
-          Whether it's a question, an idea, or just to say hi—I'm always open to connect.</p>
-        📧 <a class="link-to-btn" href="mailto:pablomichelini91@gmail.com">Email me</a>
-        <div class="badge-row">
-          <h3> 👾 Let’s connect</h3>
-          <a href="mailto:pablomichelini91@gmail.com"  rel="noopener noreferrer" aria-label="Send email">
-            <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=ffffff" alt="Gmail" />
-          </a>
-          <a href="https://github.com/pab-mchn" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=ffffff" alt="GitHub" />
-          </a>
-          <a href="https://www.youtube.com/@onthecode" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=ffffff" alt="YouTube" />
-          </a>
-          <a href="https://onthecode.blog/" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.shields.io/badge/Blog-003366?style=for-the-badge&logo=rss&logoColor=white" alt="Blog" />
-          </a>
-        </div>
-      </section>
-
-    
-      <blockquote>
-        <p>Thanks!</p>
-      </blockquote>
-    </main>
-
-    <div id="modal" class="modal hidden">
-      <div class="modal-content">
-        <span id="modal-close" class="modal-close">&times;</span>
-        <div id="modal-body">
-          <!-- dinamic content -->
-        </div>
+   <!-- Modal -->
+   <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>PROJECTS</h3>
+        <span id="modal-close" class="close">&times;</span>
       </div>
-    </div>
+      <div id="modal-body">
+        <!-- Aquí va la sección de proyectos -->
+        <section class="light project-section">
+
+          <!-- Proyecto 1 -->
+          <div class="project">
+            <img class="project-img" src="donationswebsite.png" title="Video Proyecto 3"></img>
+            <!-- <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Proyecto 1"></iframe> -->
+            <div class="project-text">
+              <h3>1. Donation Platform</h3>
+              <p>
+                A platform that allows creators in Latin America to receive donations easily.  
+              </p>
+              <a class="link-to-btn" href="https://www.ondecode.dev/" target="_blank">Visit Site</a>
+              <br><br>
+              <h3>Tech-Stack</h3>
+              <div class="badge-row">
+                <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff" alt="Next.js" />
+                <img src="https://img.shields.io/badge/TAILWIND_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=ffffff" alt="Tailwind CSS" />
+                <img src="https://img.shields.io/badge/MERCADO_PAGO-00B3FF?style=for-the-badge" alt="Mercado Pago" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 2 -->
+          <div class="project">
+            <img class="project-img" src="mpfans.png" title="Video Proyecto 3"></img>
+            <!-- <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Proyecto 2"></iframe> -->
+            <div class="project-text">
+              <h3>2. MP Fans</h3>
+              <p>
+                Alternative documentation site to make Mercado Pago API easier for developers.  
+              </p>
+              <a class="link-to-btn" href="https://mpfans.vercel.app/" target="_blank">Visit Site</a>
+              <br><br>
+              <h3>Tech-Stack</h3>
+              <div class="badge-row">
+                <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff" alt="Next.js" />
+                <img src="https://img.shields.io/badge/TAILWIND_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=ffffff" alt="Tailwind CSS" />
+                <img src="https://img.shields.io/badge/MDX-000000?style=for-the-badge&logo=mdx&logoColor=white" alt="MDX" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div class="project">
+            <img class="project-img" src="3dmaker.png" title="Video Proyecto 3"></img>
+            <!-- <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video Proyecto 2"></iframe> -->
+            <div class="project-text">
+              <h3>3. 3D Maker</h3>
+              <p>
+                Transforms logos and images into dynamic 3D objects.  
+              </p>
+              <a class="link-to-btn" href="https://3dwebmaker.vercel.app/" target="_blank">Visit Site</a>
+              <br><br>
+              <h3>Tech-Stack</h3>
+              <div class="badge-row">
+                <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff" alt="Next.js" />
+                <img src="https://img.shields.io/badge/TAILWIND_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=ffffff" alt="Tailwind CSS" />
+                <img src="https://img.shields.io/badge/THREE.JS-000000?style=for-the-badge&logo=three.js&logoColor=ffffff" alt="Three.js" />
+                <img src="https://img.shields.io/badge/REACT_THREE_FIBER-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React Three Fiber" />
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+
+  </main>
 
     <script type="module" src="/main.js"></script>
     <script type="module" src="/modal.js"></script>
@@ -286,6 +132,6 @@
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
     ></script>
-
+    <script src="./node_modules/preline/dist/preline.js"></script>
   </body>
 </html>

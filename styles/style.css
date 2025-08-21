@@ -1,11 +1,12 @@
 /* style.css */
 
+@import "tailwindcss";
 /* General imports */
 @import url('https://use.typekit.net/jmk3xov.css');
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
 /* Project sections */
-@import './reset.css';
+/* @import './reset.css';
 @import './layout.css';
 @import './typography.css';
 @import './navbar.css';
@@ -13,4 +14,42 @@
 @import './about.css';
 @import './projects.css';
 @import './responsive.css';
-@import './modal.css'
+@import './modal.css'; */
+@import './navbar.css';
+@import './modal.css'; 
+
+
+:root {
+    --dark-bg: rgba(15, 15, 15, 0.95);
+    --spacing: 350px;
+    font-family: 'Bungee', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  main {
+    width: 100%;
+    z-index: 99;
+    position: absolute;
+    margin: 0 auto;
+    padding: 120px 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family:  sans-serif;
+    background: #1a1a1a;
+    color: white;
+    scroll-behavior: smooth;
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
