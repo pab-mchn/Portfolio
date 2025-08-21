@@ -18,3 +18,5 @@ const modal = document.getElementById('modal');
     modal.addEventListener('click', (e) => {
       if (e.target === modal) modal.classList.add('hidden');
     });
+
+    

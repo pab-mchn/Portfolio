@@ -27,7 +27,7 @@ scene.add(pointLight, ambientLight);
 
 //Stars
 function addStar() {
-  const geometry = new THREE.SphereGeometry(0.2, 24, 24);
+  const geometry = new THREE.SphereGeometry(0.1, 14, 14);
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
   const star = new THREE.Mesh(geometry, material);
   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
@@ -39,113 +39,51 @@ Array(200).fill().forEach(addStar);
 
 scene.background = new THREE.Color(0x1a1a1a);
 
-// Moon
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
-const moon = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map: moonTexture,
-    normalMap: normalTexture,
-  })
-);
-moon.position.set(-30, 0, 15);
-scene.add(moon);
 
-// sun
-const sunTexture = new THREE.TextureLoader().load('sun.jpg');
-const normalsunTexture = new THREE.TextureLoader().load('normal.jpg');
-const sun = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map: sunTexture,
-    normalMap: normalsunTexture,
-  })
-);
-sun.position.set(-60, 30, 15);
-scene.add(sun);
 
-// asteroid
-const asteroidTexture = new THREE.TextureLoader().load('cliff_side.webp');
-const normalasteroidTexture = new THREE.TextureLoader().load('normal.jpg');
-const asteroid = new THREE.Mesh(
-  new THREE.SphereGeometry(3, 32, 32),
-  new THREE.MeshStandardMaterial({
-    map: asteroidTexture,
-    normalMap: normalasteroidTexture,
-  })
-);
-asteroid.position.set(-30, 0, 50);
-scene.add(asteroid);
-
-// Avatar (Pab)
-let pab;
+// planet
+let planet;
 const loader = new GLTFLoader();
 
 loader.load('planet_earth/scene.gltf', (gltf) => {
-  pab = gltf.scene;
-  pab.position.set(0, 0, -120);
-  pab.scale.set(0.001, 0.001, 0.001);
-  scene.add(pab);
+  planet = gltf.scene;
+  planet.position.set(0, 0, -120);
+  planet.scale.set(0.001, 0.001, 0.001);
+  scene.add(planet);
 
   const direction = new THREE.Vector3();
-  direction.subVectors(camera.position, pab.position).normalize();
+  direction.subVectors(camera.position, planet.position).normalize();
   const angle = Math.atan2(direction.x, direction.z);
-  pab.rotation.y = angle + Math.PI - 12;
+  planet.rotation.y = angle + Math.PI - 12;
 
   const targetScale = new THREE.Vector3(14, 14, 14);
   const duration = 200;
   let frame = 0;
 
   function scaleIn() {
-    if (!pab || frame >= duration) return;
+    if (!planet || frame >= duration) return;
     const progress = frame / duration;
-    pab.scale.lerpVectors(new THREE.Vector3(0.15, 0.15, 0.15), targetScale, progress);
+    planet.scale.lerpVectors(new THREE.Vector3(0.15, 0.15, 0.15), targetScale, progress);
     frame++;
     requestAnimationFrame(scaleIn);
   }
   scaleIn();
 });
 
-
-// Scroll Animation
-function moveCamera() {
-  const t = document.body.getBoundingClientRect().top;
-
-  moon.rotation.x += 0.05;
-  moon.rotation.y += 0.075;
-  moon.rotation.z += 0.05;
-
-  sun.rotation.x += 0.05;
-  sun.rotation.y += 0.075;
-  sun.rotation.z += 0.05;
-
-  asteroid.rotation.x += 0.05;
-  asteroid.rotation.y += 0.075;
-  asteroid.rotation.z += 0.05;
-
-  camera.position.z = 30 + t * -0.01;
-  camera.position.x = t * -0.0002;
-  camera.rotation.y = t * -0.0002;
-}
-document.body.onscroll = moveCamera;
-moveCamera();
-
-
-// move pab
+// move planet
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 let isDragging = false;
 let lastMouse = { x: 0, y: 0 };
 
 window.addEventListener('mousedown', (event) => {
-  if (!pab) return;
+  if (!planet) return;
 
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
   raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObject(pab, true);
+  const intersects = raycaster.intersectObject(planet, true);
 
   if (intersects.length > 0) {
     isDragging = true;
@@ -155,13 +93,13 @@ window.addEventListener('mousedown', (event) => {
 });
 
 window.addEventListener('mousemove', (event) => {
-  if (!isDragging || !pab) return;
+  if (!isDragging || !planet) return;
 
   const deltaX = event.clientX - lastMouse.x;
   const deltaY = event.clientY - lastMouse.y;
 
-  pab.rotation.y += deltaX * 0.005;
-  pab.rotation.x += deltaY * 0.005;
+  planet.rotation.y += deltaX * 0.005;
+  planet.rotation.x += deltaY * 0.005;
 
   lastMouse.x = event.clientX;
   lastMouse.y = event.clientY;
@@ -215,12 +153,8 @@ window.addEventListener('mousemove', (event) => {
 function animate() {
   requestAnimationFrame(animate);
 
-  moon.rotation.x += 0.005;
-  sun.rotation.x += 0.005;
-  asteroid.rotation.x += 0.005;
-
-  if (pab && !isDragging) {
-    pab.rotation.y += 0.001;
+  if (planet && !isDragging) {
+    planet.rotation.y += 0.001;
   }
 
   cube.rotation.y += 0.01;
@@ -241,53 +175,3 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
-
-
-
-//navbar
-
-  const hamburger = document.getElementById("hamburger");
-  const menu = document.getElementById("menu");
-  const brand = document.getElementById("brand-name");
-  const homeLink = document.getElementById('home-link');
-
-  window.addEventListener('scroll', () => {
-    const shouldHide = window.scrollY > 50; // o ajustá este valor
-    brand.classList.toggle('hidden', shouldHide);
-    homeLink.style.display = shouldHide ? 'inline' : 'none';
-  });
-
-  // Toggle menú hamburguesa
-  hamburger.addEventListener("click", () => {
-    menu.classList.toggle("show");
-  });
-
-  // hide brand scroll scroll
-  window.addEventListener('scroll', () => {
-    const brand = document.getElementById('brand-name');
-    const homeLink = document.getElementById('home-link');
-  
-    const shouldHide = window.scrollY > 50;
-  
-    if (brand) brand.classList.toggle('hidden', shouldHide);
-    if (homeLink) homeLink.style.display = shouldHide ? 'inline' : 'none';
-  });
-
-  // close menu after click 
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove("show");
-    });
-  });
-
-
-  //scroll down
-  const scrollIndicator = document.getElementById('scroll-down-indicator');
-
-window.addEventListener('scroll', () => {
-  const shouldHide = window.scrollY > 50;
-
-  if (scrollIndicator) scrollIndicator.classList.toggle('hidden', shouldHide);
-});
-
-

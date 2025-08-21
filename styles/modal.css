@@ -5,11 +5,13 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0, 0, 0, 0.566);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 2000;
+
+      
     }
 
     .modal.hidden {
@@ -89,7 +91,15 @@
     .project-text {
       flex: 1;
     }
+    
+    .project-text a {
+      color: #0E30FF;
+      font-weight: bold;
+    }
 
+    .project-text a:hover {
+      color: #1f36cc;
+    }
     .project-text h3 {
       margin: 0 0 0.5rem 0;
     }
